@@ -1,2 +1,2 @@
-# Deadfish interpreter in Python
-Hi, I just made this for fun. It's in pure python and there is no dependencies. The code may be a bit wonky but it works.
+# Deadfish++ interpreter in Python
+Deadfish++ has some extra features that are going to be added. It extends upon Deadfish by adding functionality for ASCII printing so you can actually print out text now. Maybe more features coming idk??
