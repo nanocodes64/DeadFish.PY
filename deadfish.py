@@ -4,6 +4,7 @@ class Program:
     I_DEC = 'd'
     I_SQR = 's'
     I_OUT = 'o'
+    I_OCH = '*'
 
     def __init__(self, data):
         self.accumulator = 0
@@ -22,6 +23,8 @@ class Program:
                 self.Square()
             elif curr_instruction == Program.I_OUT:
                 self.Output()
+            elif curr_instruction == Program.I_OCH:
+                self.OutputASCII()
             self.CheckOverflow()
     def Increment(self):
         self.accumulator += 1
@@ -34,6 +37,11 @@ class Program:
 
     def Output(self):
         print(self.accumulator)
+    
+    def OutputASCII(self):
+        print(chr(self.accumulator))
+
+
 if __name__ == '__main__':
     prg = input("deadfish1.0\nWhich file to load? X for manual input>")
     if prg != "X":
