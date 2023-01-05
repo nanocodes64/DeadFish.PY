@@ -9,7 +9,7 @@ class Program:
         self.accumulator = 0
         self.data = data
     def CheckOverflow(self):
-        if self.accumulator > 255 or self.accumulator < 0:
+        if self.accumulator == 256 or self.accumulator == -1:           
             self.accumulator = 0
     def Run(self): # the actual interpreter
         for i in self.data:
