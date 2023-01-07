@@ -1,3 +1,5 @@
+import sys
+
 class Program:
     #instructions
     I_INC = 'i'
@@ -6,7 +8,6 @@ class Program:
     I_OUT = 'o'
     I_OCH = '*'
     I_SDE = '\\'
-
     def __init__(self, data):
         self.accumulator = 0
         self.data = data
@@ -39,24 +40,29 @@ class Program:
         self.accumulator **= 2
 
     def Output(self):
-        print(self.accumulator)
+        print(self.accumulator, end='')
     
     def OutputASCII(self):
-        print(chr(self.accumulator))
+        print(chr(self.accumulator), end='')
     
     def ClearAccumulator(self):
         self.accumulator = 0
 
+flag = False
+
 if __name__ == '__main__':
-    prg = input("deadfish1.0\nWhich file to load? X for manual input>")
-    if prg != "X":
-        try:
-            with open(prg, 'r') as f:
-                prg = f.read()
-        except:
-            print("Failed to load! Entering manual input mode.")
-            prg = input("Enter deadfish program:")
+    try:
+        prg = sys.argv[1]
+    except:
+        flag = True    
+    if flag == False:
+        if prg:
+            try:
+                with open(prg, 'r') as f:
+                    prg = f.read()
+                x = Program(prg)
+                x.Run()
+            except:
+                print("File not found.")
     else:
-        prg = input("Enter deadfish program:")
-    x = Program(prg)
-    x.Run()
+        raise Exception("File not specified")
