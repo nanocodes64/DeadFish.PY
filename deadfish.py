@@ -8,6 +8,8 @@ class Program:
     I_OUT = 'o'
     I_OCH = '*'
     I_SDE = '\\'
+    I_DBL = 'b'
+
     def __init__(self, data):
         self.accumulator = 0
         self.data = data
@@ -29,6 +31,8 @@ class Program:
                 self.OutputASCII()
             elif curr_instruction == Program.I_SDE:
                 self.ClearAccumulator()
+            elif curr_instruction == Program.I_DBL:
+                self.Double()
             self.CheckOverflow()
     def Increment(self):
         self.accumulator += 1
@@ -47,6 +51,9 @@ class Program:
     
     def ClearAccumulator(self):
         self.accumulator = 0
+
+    def Double(self):
+        self.accumulator *= 2
 
 flag = False
 
