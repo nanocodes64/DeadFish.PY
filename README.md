@@ -1,6 +1,7 @@
 # Deadfish++
 Deadfish++ is an esoteric programming language, that extends upon the functionalities of the original Deadfish adding some features for convenience.
-To install, just clone this repo.
+To install, run the following:
+```git clone https://github.com/nanocodes64/DeadFishpp.git```
 
 # Docs
 There are few commands in Deadfish++.
