@@ -10,8 +10,8 @@ i- increment the accumulator
 d- decrement the accumulator
 s- square the accumulator
 o- output the value of the accumulator
-\*- output value of accumulator in ascii
-\\- clear the accumulator
+*- output value of accumulator in ascii
+\- clear the accumulator
 ```
 
 Write your programs in any file extension you want.
